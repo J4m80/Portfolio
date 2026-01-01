@@ -58,6 +58,9 @@ def locat(message):
         bsm(message.chat.id, f"Thanks! We received your location:\nLatitude: {latitude}\nLongitude: {longitude}")
     else:
         None
+        
+def help(message):
+    bsm(message.chat.id, "This bot was made for my portfolio. \n Author: J4m80")
 
 @bot.message_handler(func=lambda message: True)
 def logic(message):
@@ -72,6 +75,8 @@ def logic(message):
         main(message)
     elif text == 'Back to main':
         main(message)
+    elif text == 'Help / Contact':
+        help(message)
 
     elif text in ['Pizza', 'Burger', 'French fries', 'Rybeye']:
         if chat_id not in user_data:
